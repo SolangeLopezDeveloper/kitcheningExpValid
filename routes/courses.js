@@ -9,7 +9,7 @@ const{detail, list}= require('../controllers/coursesController')
 
 
 router.get('/detail/:id', detail );
-router.get('/courses/list', list);
+router.get('/list', list);
 
 module.exports = router;
 

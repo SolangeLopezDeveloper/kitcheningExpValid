@@ -6,7 +6,7 @@ module.exports = {
     },
     login: (req, res) => {
         return res.render('users/login',{
-            title: "Login"
+            title: "Ingresá"
         })
     },
     profile: (req, res) => {
