@@ -16,11 +16,11 @@ module.exports = {
 
         const course = courses.find(course => course.id === +id)
        
-        return res.render('courses/detail',{
+       return res.render('courses/detail',{
             title: "Detalle del curso",
             course
         })
-      },
+      }
 
 
-}
+    }

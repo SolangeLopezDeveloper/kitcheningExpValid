@@ -2,22 +2,15 @@
 <html lang="en">
     <%- include('../partials/head')%>
 <body>
+    <%- include('../partials/header')%>
     <section class="home__main__section--productos">
-        <% courses.forEach(({title,price,description,chef,image,id}) => { %>
-           <article class="home__main__section__article animate__animated">
-          <div class="home__main__section__article--imagen">
-            <img class="home__main__section__article--imagen-product" src="/images/cursos/<%= image %> " alt="">
-            <img class="home__main__section__article--imagen-sticker" src="/images/img-nuevo.png" alt="">
-            <a class="home__main__section__article--imagen-zoom" href="">ampliar foto</a>
-          </div>
-          <div class="home__main__section__article--contenido">
-            <h4><%= title %> </h4>
-            <p><%= description%> </p>
-            <a href="/courses/detail/<%= id %> ">ver más</a>
-          </div>
-        </article>
-        <% }) %>
-
+       
+ <h1><%= course.title %></h1>
+  
+ <img src="/images/cursos/<%=  course.image %>" alt="">
+ 
+ <p><%= course.description %> </p>
+    </section>
 <%- include('../partials/footer')%>
 
 <%- include('../partials/scripts')%>
