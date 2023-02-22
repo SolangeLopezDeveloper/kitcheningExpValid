@@ -1,71 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head')%>
+<%- include('../partials/head') %>
 
-<body class="home">
-  <!-- encabezado -->
-  <%- include('../partials/header')%>
-  <!-- principal -->
-  <main class="home__main">
-    <!-- productos -->
-    <section class="home__main__section--productos">
-      <% courses.forEach(({title,price,description,chef,image,id}) => { %>
-         <article class="home__main__section__article animate__animated">
-        <div class="home__main__section__article--imagen">
-          <img class="home__main__section__article--imagen-product" src="/images/cursos/<%= image %> " alt="">
-          <img class="home__main__section__article--imagen-sticker" src="/images/img-nuevo.png" alt="">
-          <a class="home__main__section__article--imagen-zoom" href="">ampliar foto</a>
-        </div>
-        <div class="home__main__section__article--contenido">
-          <h4><%= title %> </h4>
-          <p><%= description%> </p>
-          <a href="/courses/detail/<%= id %> ">ver más</a>
-        </div>
-      </article>
-      <% }) %>
-    </section>
-  </main>
+  <body class="home">
+    <!-- encabezado -->
+    <%- include('../partials/header') %>
 
-  <%- include('../partials/footer')%>
+      <!-- principal -->
+      <main class="home__main">
+     
+        <!-- productos -->
+        <section class="home__main__section--productos">
+          <% courses.forEach(({title,price,description,chef,images,id,sale,free,newest}) => { %>
+            <%- include('../partials/courseArticle',{
+              title,
+              images,
+              id,
+              sticker: newest ? 'img-nuevo.png' : sale ? "img-descuento.png" : "img-gratis.png"
+            }) %> 
+          <% }) %>
+         
+         
+        </section>
+           <!-- botón de whatsapp -->
 
-  <%- include('../partials/scripts')%>
-    <script>
+        <%- include('../partials/whatsApp') %>
 
-      new Glider(document.querySelector('.glider'), {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        draggable: true,
-        dots: '.dots',
-        arrows: {
-          prev: '.glider-prev',
-          next: '.glider-next'
-        },
-        responsive: [
-          {
-            // screens greater than >= 768px
-            breakpoint: 768,
-            settings: {
-              // Set to `auto` and provide item width to adjust to viewport
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              itemWidth: 150,
-              duration: 0.25
-            }
-          },{
-            // screens greater than >= 1024px
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 1,
-              itemWidth: 150,
-              duration: 0.25
-            }
-          }
-        ]
-      });
+      </main>
+      <!-- pie de pagina -->
 
-    </script>
-</body>
+      <%- include('../partials/footer') %>
+
+
+        <%- include('../partials/scripts') %>
+
+          <script src="/javascripts/home.js"></script>
+
+  </body>
 
 </html>
