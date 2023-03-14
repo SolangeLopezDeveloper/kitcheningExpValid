@@ -11,6 +11,10 @@
       <li>
         <a href="/courses/add">Agregar</a>
       </li>
+      <% if (locals.userLogin) { %>
+       <a href="/users/profile">Hola, <%= userLogin.name %></a>
+       <a href="/users/logout">Salir</a>
+      <% }else{ %>
       <li>
         <a href="/users/register">registrar</a>
       </li>
@@ -18,5 +22,6 @@
         <a href="/users/login">ingresar</a>
 
       </li>
+      <% } %>
     </ul>
   </nav>

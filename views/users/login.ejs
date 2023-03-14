@@ -15,7 +15,7 @@
             <article class="login__main__section__article">
               
               
-                <form action="">
+                <form action="" method="POST">
                     <div class="form__header">
                         <h1>Ingresá</h1>
                         <hr>
@@ -23,9 +23,11 @@
                    
                     <div class="form__box">
                         <input type="email" placeholder="Email" name="email" id="email">
+                        <small><%= (locals.errors && errors.email) && errors.email.msg %> </small>
                     </div>
                     <div class="form__box">
                         <input type="password" placeholder="Contraseña" name="password" id="password">
+                        <small><%= (locals.errors && errors.password) && errors.password.msg %> </small>
                         <small><a href="">Olvidé mi contraseña</a></small> 
                     </div>
                     <div class="form__box--remember">

@@ -1,0 +1,18 @@
+[
+   {
+      "id": 1,
+      "name": "Solange",
+      "surname": "Lopez",
+      "email": "solangelopezdev@gmail.com",
+      "password": "$2a$10$/D2rSC6ke1lWBGxHNLQhUeXa.Yk7IGMvm7VeWLqIOZqArqNNZbsK.",
+      "rol": "admin"
+   },
+   {
+      "id": 2,
+      "name": "Soledad",
+      "surname": "Lopez",
+      "email": "solcytholopez@gmail.com",
+      "password": "$2a$10$SddshRG/uWZzGcDqVpQamO83POQQAAwGZsNtPO1IXaZWt1KJg2wye",
+      "rol" : "user"
+   }
+]
